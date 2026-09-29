@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Saudações Animadas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a; /* Cor de fundo */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Tahoma, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 400px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .texto {
+      position: absolute;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff;
+      opacity: 0;
+      animation: alternarTexto 8s infinite ease-in-out;
+    }
+
+    /* A animação total dura 8s (4 saudações × 2 segundos cada) */
+    .texto:nth-child(1) { animation-delay: 0s; }
+    .texto:nth-child(2) { animation-delay: 2s; }
+    .texto:nth-child(3) { animation-delay: 4s; }
+    .texto:nth-child(4) { animation-delay: 6s; }
+
+    @keyframes alternarTexto {
+      0% {
+        opacity: 0;
+      }
+      5% {
+        opacity: 1; /* Transição suave de entrada */
+      }
+      20% {
+        opacity: 1; /* Permanece visível */
+      }
+      25% {
+        opacity: 0; /* Transição suave de saída ao atingir 2s */
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="texto">Oi :)</div>
+    <div class="texto">Hi :)</div>
+    <div class="texto">Salut :)</div>
+    <div class="texto">¡Hola! :)</div>
+  </div>
+
+</body>
+</html>
